@@ -8,18 +8,18 @@ import isodate
 
 
 class Channel:
-    """Класс для ютуб-канала"""
+    """ Класс для ютуб-канала"""
     api_key: str = os.getenv('YouTube-API')
     youtube = build('youtube', 'v3', developerKey=api_key)
 
-    def __init__(self, channel_id: str) -> None:
-        """Экземпляр инициализируется id канала. Дальше все данные будут подтягиваться по API."""
+    def __init__(self, https://github.com/MilaaPython/youtube-analytics-project.git: str) -> None:
+        """ инициализируется id канала. Дальше все данные будут подтягиваться по API."""
         self.__channel_id = channel_id
+        
 
     def print_info(self) -> None:
-        """Выводит в консоль информацию о канале."""
-        channel = self.youtube.channels().list(id=self.__channel_id, part='snippet,statistics').execute()
-        print(channel)
+       """ Выводит в консоль информацию о видео."""
+        print(json.dumps(self.channel, indent=2, ensure_ascii=False))
 
     @classmethod
     def get_service(cls):
