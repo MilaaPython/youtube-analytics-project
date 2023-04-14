@@ -12,14 +12,14 @@ class Channel:
     api_key: str = os.getenv('YouTube-API')
     youtube = build('youtube', 'v3', developerKey=api_key)
 
-    def __init__(self, https://github.com/MilaaPython/youtube-analytics-project.git: str) -> None:
+    def __init__(self, channel_id: str) -> None:
         """ инициализируется id канала. Дальше все данные будут подтягиваться по API."""
         self.__channel_id = channel_id
         
 
     def print_info(self) -> None:
        """ Выводит в консоль информацию о видео."""
-        print(json.dumps(self.channel, indent=2, ensure_ascii=False))
+        print(json.dumps(self, indent=2, ensure_ascii=False))
 
     @classmethod
     def get_service(cls):
