@@ -10,7 +10,7 @@ import isodate
 class Channel:
     """ Класс для ютуб-канала"""
     _API_KEY: str = os.getenv('API_KEY')
-    _youtube = build('youtube', 'v3', developerKey=__API_KEY)
+    _youtube = build('youtube', 'v3', developerKey=_API_KEY)
 
     def __init__(self, channel_id: str) -> None:
         """ экземпляр инициализируется id канала. Дальше все данные будут подтягиваться по API."""
